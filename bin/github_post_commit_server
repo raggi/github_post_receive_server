@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+$0 = "Rack Post-Commit Server :-P"
+begin
+  require 'rubygems'
+  require 'github_post_commit_server'
+rescue LoadError
+  require File.dirname(__FILE__) + '/../lib/github_post_commit_server'
+end
+
+app = Rack::Builder.new do
+  use Rack::CommonLogger
+  use Rack::Lint 
+  run GithubPostCommitServer::RackApp.new
+end
+
+trap(:INT) { exit 0 }
+begin
+  Rack::Handler::Mongrel.run(app, :Port => 9001)
+rescue
+  puts "Install mongrel for faster http service."
+  Rack::Handler::Webrick.run(app, :Port => 9001)
+end

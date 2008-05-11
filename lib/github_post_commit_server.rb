@@ -1,0 +1,1 @@
+require 'github_post_commit_server/rack_app'
