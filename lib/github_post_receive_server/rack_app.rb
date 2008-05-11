@@ -1,6 +1,8 @@
 # 
 #  rack_app.rb
 #  github_post_commit_server
+#
+#  Example Rack app for http://github.com/guides/post-receive-hooks
 #  
 #  Created by James Tucker on 2008-05-11.
 #  Copyright 2008 James Tucker
@@ -10,7 +12,7 @@ require 'rubygems'
 require 'rack'
 require 'json'
 
-module GithubPostCommitServer
+module GithubPostReceiveServer
   class RackApp
     GO_AWAY_COMMENT = "Be gone, foul creature of the internet."
     THANK_YOU_COMMENT = "Thanks! You beautiful soul you."

@@ -1,8 +1,8 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
-describe "Rack Post-Commit Server :-P" do 
+describe "Rack Post-Receive Server :-P" do 
   before do
-    @server = GithubPostCommitServer::RackApp.new
+    @server = GithubPostReceiveServer::RackApp.new
   end
   
   it "should reply with a rude message on GET" do 
