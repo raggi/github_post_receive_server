@@ -1,5 +1,17 @@
 #!/usr/bin/env ruby
-$0 = "Rack Post-Receive Server :-P"
+trap(:INT) { exit 0 }
+
+defaults = {
+  :Host => '127.0.0.1',
+  :Port => 9001
+}
+
+abort %{
+  Usage: #{$0} [--help] [host [port]]
+    The default host is #{defaults[:Host]}
+    The default port is #{defaults[:Port]}
+} if ARGV.find {|a| /--help/ =~ a}
+
 begin
   require 'rubygems'
   require 'github_post_receive_server'
@@ -13,10 +25,16 @@ app = Rack::Builder.new do
   run GithubPostReceiveServer::RackApp.new
 end
 
-trap(:INT) { exit 0 }
+options = {
+  :Host => ARGV[0] || defaults[:Host], 
+  :Port => ARGV[1] || defaults[:Port]
+}
+
+puts "Starting server on http://#{options[:Host]}:#{options[:Port]}"
+$0 = "Rack Post-Receive Server (http://#{options[:Host]}:#{options[:Port]}) :-P"
 begin
-  Rack::Handler::Mongrel.run(app, :Port => 9001)
-rescue
-  puts "Install mongrel for faster http service."
-  Rack::Handler::Webrick.run(app, :Port => 9001)
+  Rack::Handler::Mongrel.run(app, options)
+rescue LoadError
+  warn "Install mongrel for faster http service."
+  Rack::Handler::WEBrick.run(app, options)
 end
