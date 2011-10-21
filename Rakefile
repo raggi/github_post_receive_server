@@ -12,15 +12,15 @@ spec = Gem::Specification.new do |s|
   s.author = "James Tucker"
   s.email = "jftucker@gmail.com"
 #  s.homepage = "http://code.ra66i.org/github_post_receive_server"
-  
+
   s.add_dependency "rack"
-  
+
   s.require_path = 'lib'
   #s.autorequire = 'github_post_receive_server'
-  
-  s.files = %w(LICENSE README Rakefile TODO) + 
+
+  s.files = %w(LICENSE README Rakefile TODO) +
             Dir.glob("{bin,lib,specs}/**/*")
-            
+
   s.bindir = 'bin'
   s.executables = %w[
     github_post_receive_server
