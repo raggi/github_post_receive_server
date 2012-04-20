@@ -9,6 +9,6 @@ Sadly, the way rubygems packs up binaries, I will need some assistance making
 the rackup work from the default binary install path.
 
 For more details please see the following guide on GitHub:
-http://github.com/guides/post-receive-hooks
+http://help.github.com/post-receive-hooks
 
 And please, take a look at the source, that's what it's there for.
