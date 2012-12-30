@@ -11,7 +11,7 @@ describe "Rack Post-Receive Server :-P" do
     res.should.be.ok
     res.should.match /be.*gone.*foul/i # *evil grin*
   end
-  it "should reply with a rude message on GET" do 
+  it "should reply with a rude message on POST without a payload" do 
     req = Rack::MockRequest.new(@server)
     res = req.post("/", {})
     res.should.be.ok
