@@ -1,0 +1,20 @@
+PATH
+  remote: .
+  specs:
+    github_post_receive_server (0.0.2)
+      rack
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    bacon (1.2.0)
+    rack (1.5.2)
+    rake (10.0.3)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bacon
+  github_post_receive_server!
+  rake

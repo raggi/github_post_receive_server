@@ -8,8 +8,9 @@ Gem::Specification.new("github_post_receive_server", "0.0.2") do |s|
 
   s.add_dependency "rack"
   s.add_development_dependency "bacon"
+  s.add_development_dependency "rake"
 
-  s.files = %w(LICENSE README Rakefile TODO) + Dir.glob("{bin,lib,specs}/**/*")
+  s.files = %w(LICENSE README.md Rakefile TODO) + Dir.glob("{bin,lib,specs}/**/*")
 
   s.bindir = 'bin'
   s.executables = %w[
