@@ -26,7 +26,7 @@ app = Rack::Builder.new do
 end
 
 options = {
-  :Host => ARGV[0] || defaults[:Host], 
+  :Host => ARGV[0] || defaults[:Host],
   :Port => ARGV[1] || defaults[:Port]
 }
 

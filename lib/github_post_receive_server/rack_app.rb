@@ -8,7 +8,6 @@
 #  Copyright 2008 James Tucker
 # 
 
-require 'rubygems'
 require 'rack'
 require 'json'
 
@@ -27,15 +26,15 @@ module GithubPostReceiveServer
     # received payload.
     def handle_request
       payload = @req.POST["payload"]
-      
+
       return rude_comment if payload.nil?
-      
+
       puts payload unless $TESTING # remove me!
-      
+
       payload = JSON.parse(payload)
-      
+
       # ... Your code goes here! ...
-      
+
       @res.write THANK_YOU_COMMENT
     end
 

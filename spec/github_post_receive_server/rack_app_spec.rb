@@ -1,10 +1,10 @@
-require File.dirname(__FILE__) + '/../spec_helper'
+require 'spec_helper'
 
 describe "Rack Post-Receive Server :-P" do 
   before do
     @server = GithubPostReceiveServer::RackApp.new
   end
-  
+
   it "should reply with a rude message on GET" do 
     req = Rack::MockRequest.new(@server)
     res = req.get("/")
@@ -17,7 +17,7 @@ describe "Rack Post-Receive Server :-P" do
     res.should.be.ok
     res.should.match /be.*gone.*foul/i # *evil grin*
   end
-  
+
   GITHUB_JSON = <<-GITHUB_JSON
   { 
     "before": "5aef35982fb2d34e9d9d4502f6ede1072793222d",
@@ -53,7 +53,7 @@ describe "Rack Post-Receive Server :-P" do
     "ref": "refs/heads/master" 
   }
   GITHUB_JSON
-  
+
   it "should reply with a nice message on POST with a payload" do 
     req = Rack::MockRequest.new(@server)
     res = req.post("/", :input => "payload=#{GITHUB_JSON}")

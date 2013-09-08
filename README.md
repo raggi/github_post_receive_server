@@ -1,5 +1,4 @@
-GitHub Post Commit Server
-=========================
+# GitHub Post Commit Server
 
 This is a template server for using with the github callbacks. Extend it, make
 it your own, enjoy it. I've added a rackup for those of you that would prefer
