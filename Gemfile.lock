@@ -8,7 +8,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     bacon (1.2.0)
-    rack (1.5.2)
+    rack (2.0.8)
     rake (10.0.3)
 
 PLATFORMS
