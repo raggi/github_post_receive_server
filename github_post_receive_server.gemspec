@@ -17,5 +17,4 @@ Gem::Specification.new("github_post_receive_server", "0.0.2") do |s|
     github_post_receive_server
     github_post_receive_server.ru
   ]
-  s.default_executable = 'github_post_receive_server'
 end
