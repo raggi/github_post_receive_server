@@ -1,4 +1,4 @@
-Gem::Specification.new("github_post_receive_server", "0.0.2") do |s|
+Gem::Specification.new("github_post_receive_server", "0.0.3") do |s|
   s.extra_rdoc_files = ["README.md", "LICENSE", 'TODO']
   s.summary = "A post commit handler server for GitHub, built on Rack"
   s.description = s.summary
