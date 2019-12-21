@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    github_post_receive_server (0.0.2)
+    github_post_receive_server (0.0.3)
       rack
 
 GEM
